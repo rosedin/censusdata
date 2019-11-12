@@ -5,6 +5,10 @@
 
 ### 0 = no problem/not altered 1 = slightly unusual 2 = extremely unusual (likely a problem)
 
+## Reading in Census Data
+library(readxl)
+Census <- read_xlsx("CensusAtSchoolDatabase2018asof12-8-18.xlsx")
+
 ## Ageyears 
 ## ages 5 and younger and ages 23 and older were flagged as extremely unusual. Ages between 6 and 8 and ages between 20 and 22 were also flagged as slightly unusual.
 Census$Ageyears <- Census$Age_years
