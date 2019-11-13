@@ -9,9 +9,6 @@
 library(readxl)
 Census <- read_xlsx("CensusAtSchoolDatabase2018asof12-8-18.xlsx")
 
-# Importance_saving_energy read as logical type
-Census$Importance_saving_energy <- as.character(Census$Importance_saving_energy)
-
 ## Ageyears 
 ## ages 5 and younger and ages 23 and older were flagged as extremely unusual. Ages between 6 and 8 and ages between 20 and 22 were also flagged as slightly unusual.
 Census$flag_age_years <- 0
@@ -44,7 +41,7 @@ Census$flag_reaction_time[which(Census$Reaction_time >1.21)] <- 2
 
 ##3Travel_time_to_School
 ### We changed the travel times that would be flagged as 1, or "slightly unusual", to between 75 minutes and 120 minutes because in big cities with traffic and rural areas with lack of schools, travel times could feasibly be within this interval.
-Travel_time_to_School<-Census$Travel_time_to_school
+Travel_time_to_School<-as.numeric(Census$Travel_time_to_school)
 Travel_time_to_School[Travel_time_to_School==0.01]<-6
 Travel_time_to_School[Travel_time_to_School==0.23]<-14
 Travel_time_to_School[Travel_time_to_School==0.316]<-19
