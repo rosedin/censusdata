@@ -9,6 +9,9 @@
 library(readxl)
 Census <- read_xlsx("CensusAtSchoolDatabase2018asof12-8-18.xlsx")
 
+# Importance_saving_energy read as logical type
+Census$Importance_saving_energy <- as.character(Census$Importance_saving_energy)
+
 ## Ageyears 
 ## ages 5 and younger and ages 23 and older were flagged as extremely unusual. Ages between 6 and 8 and ages between 20 and 22 were also flagged as slightly unusual.
 Census$flag_age_years <- 0
