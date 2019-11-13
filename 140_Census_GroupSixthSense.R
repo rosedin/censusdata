@@ -11,7 +11,6 @@ Census <- read_xlsx("CensusAtSchoolDatabase2018asof12-8-18.xlsx")
 
 ## Ageyears 
 ## ages 5 and younger and ages 23 and older were flagged as extremely unusual. Ages between 6 and 8 and ages between 20 and 22 were also flagged as slightly unusual.
-Census$Ageyears <- Census$Age_years
 Census$flag_age_years <- 0
 Census$flag_age_years[which(Census$Ageyears <= 5 | Census$Ageyears >= 23)] <- 2
 Census$flag_age_years[which(Census$Ageyears >= 6  & Census$Ageyears <= 8)] <- 1
@@ -188,3 +187,6 @@ Census %>% rename(Ageyears = Age_years,
                   Role_Model_Type = Role_model_type,
                   Charity_Donation = Charity_donation)
 
+library(writexl)
+
+write_xlsx(Census, "(Updated)CensusAtSchoolDatabase2018asof12-8-18.xlsx")
