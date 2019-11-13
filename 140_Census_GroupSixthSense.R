@@ -149,3 +149,41 @@ Census$Footlength_cm = Footlength_cm
 Census$Height_cm = Height_cm
 Census$Travel_time_to_school = Travel_time_to_School
 
+# Renaming Variables
+library(dplyr)
+Census %>% rename(Ageyears = Age_years, 
+                  Travel_to_School = Travel_to_school, 
+                  Travel_time_to_School = Travel_time_to_school, 
+                  Importance_Internet_access = Importance_internet_access,
+                  Index_Fingerlength_mm = Index_fingerlength_mm,
+                  Ring_Fingerlength_mm = Ring_fingerlength_mm,
+                  Longer_Finger_Lefthand = Longer_finger_lefthand,
+                  Favorite_Season = Favorite_season,
+                  Favorite_Food = Favorite_food,
+                  Favorite_School_Subject = Favorite_school_subject,
+                  Sleep_Hours_Schoolnight = Sleep_hours_schoolnight,
+                  Sleep_Hours_Non_Schoolnight = Sleep_hours_non_schoolnight,
+                  Home_Occupants = Home_occupants,
+                  Home_Internet_Access = Home_internet_access,
+                  Communication_With_Friends = Communication_with_friends,
+                  Text_Messages_Sent_Yesterday = Text_messages_sent_yesterday,
+                  Text_Messages_Received_Yesterday = Text_messages_received_yesterday,
+                  Hanging_Out_With_Friends_Hours = Activities_hanging_out_with_friends_hours,
+                  Talking_On_Phone_Hours = Activities_talking_on_phone_hours,
+                  Doing_Homework_Hours = Activities_doing_homework_hours,
+                  Doing_Things_With_Family_Hours = Activities_doing_things_with_family_hours,
+                  Outdoor_Activities_Hours = Activities_outdoor_activities_hours,
+                  Video_Games_Hours = Activities_video_games_hours,
+                  Social_Websites_Hours = Activities_social_websites_hours,
+                  Texting_Messaging_Hours = Activities_texting_messaging_hours,
+                  Computer_Use_Hours = Activities_computer_use_hours,
+                  Watching_TV_Hours = Activities_Watching_TV_Hours,
+                  Paid_Work_Hours = Activities_paid_work_hours,
+                  Work_At_Home_Hours = Activities_work_at_home_hours,
+                  Schoolwork_Pressure = Schoolwork_pressure,
+                  Planned_Education_Level = Planned_education_level,
+                  Favorite_Music = Favorite_music,
+                  Preferred_Status = Preferred_status,
+                  Role_Model_Type = Role_model_type,
+                  Charity_Donation = Charity_donation)
+
