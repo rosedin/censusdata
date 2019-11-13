@@ -9,9 +9,6 @@
 library(readxl)
 Census <- read_xlsx("CensusAtSchoolDatabase2018asof12-8-18.xlsx")
 
-# Importance_saving_energy read as logical type
-Census$Importance_saving_energy <- as.character(Census$Importance_saving_energy)
-
 ## Ageyears 
 ## ages 5 and younger and ages 23 and older were flagged as extremely unusual. Ages between 6 and 8 and ages between 20 and 22 were also flagged as slightly unusual.
 Census$flag_age_years <- 0
@@ -44,7 +41,7 @@ Census$flag_reaction_time[which(Census$Reaction_time >1.21)] <- 2
 
 ##3Travel_time_to_School
 ### We changed the travel times that would be flagged as 1, or "slightly unusual", to between 75 minutes and 120 minutes because in big cities with traffic and rural areas with lack of schools, travel times could feasibly be within this interval.
-Travel_time_to_School<-Census$Travel_time_to_school
+Travel_time_to_School<-as.numeric(Census$Travel_time_to_school)
 Travel_time_to_School[Travel_time_to_School==0.01]<-6
 Travel_time_to_School[Travel_time_to_School==0.23]<-14
 Travel_time_to_School[Travel_time_to_School==0.316]<-19
@@ -70,7 +67,7 @@ Census$flag_score_in_memory_game[which(Census$Score_in_memory_game < 2.02 |Censu
 
 ## Height_cm_cm 
 ### We increased the cutoff of unusual height and armspan to greater than 1
-Height_cm <- Census$Height_cm
+Height_cm <- as.numeric(Census$Height_cm)
 Height_cm[Height_cm==""]<-NA
 Height_cm[Height_cm=="+9000"]<-NA
 Height_cm[Height_cm==".5"]<-NA
@@ -87,7 +84,7 @@ Height_cm[which(Height_cm>235&Height_cm<950)]<-NA
 Height_cm[which(Height_cm>=950&Height_cm<=2350)]<-0.1*(Height_cm[which(Height_cm<=2350&Height_cm>=950)])   #mm-cm
 Height_cm[which(Height_cm>2350)]<-NA
 
-Armspan_cm <- Census$Armspan_cm
+Armspan_cm <- as.numeric(Census$Armspan_cm)
 Armspan_cm[Armspan_cm<1]<-NA
 Armspan_cm[which(Armspan_cm<=2.35)]<-100*(Armspan_cm[which(Armspan_cm<2.35)])   #m-cm
 Armspan_cm[which(Armspan_cm>2.35&Armspan_cm<3.1)]<-NA
@@ -107,7 +104,7 @@ Census$Armspan_cm<-Armspan_cm
 
 ## Footlength_cm
 ### Based on research of footsizes for children between the ages of 8 and 20, we chose 20 centimeters as the minimum cut-off value and 34 centimeter as the maximum cut-off value. We kept the same conversion calculations as the previous group and replaced the cut-off values.
-Footlength_cm<-Census$Footlength_cm
+Footlength_cm<-as.numeric(Census$Footlength_cm)
 Footlength_cm[which(Footlength_cm<0.2)]<-NA 
 Footlength_cm[which(Footlength_cm<=0.34&Footlength_cm>=0.2)]<-100*(Footlength_cm[which(Footlength_cm<=0.34&Footlength_cm>=0.2)])   #m-cm
 Footlength_cm[which(Footlength_cm>0.65&Footlength_cm<=1.1)]<-30.48*(Footlength_cm[which(Footlength_cm>0.65&Footlength_cm<=1.1)])  #foot-cm
