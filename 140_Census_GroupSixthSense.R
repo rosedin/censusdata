@@ -12,9 +12,9 @@ Census <- read_xlsx("CensusAtSchoolDatabase2018asof12-8-18.xlsx")
 ## Ageyears 
 ## ages 5 and younger and ages 23 and older were flagged as extremely unusual. Ages between 6 and 8 and ages between 20 and 22 were also flagged as slightly unusual.
 Census$flag_age_years <- 0
-Census$flag_age_years[which(Census$Ageyears <= 5 | Census$Ageyears >= 23)] <- 2
-Census$flag_age_years[which(Census$Ageyears >= 6  & Census$Ageyears <= 8)] <- 1
-Census$flag_age_years[which(Census$Ageyears >= 20 & Census$Ageyears <= 22)] <- 1
+Census$flag_age_years[which(Census$Age_years <= 5 | Census$Age_years >= 23)] <- 2
+Census$flag_age_years[which(Census$Age_years >= 6  & Census$Age_years <= 8)] <- 1
+Census$flag_age_years[which(Census$Age_years >= 20 & Census$Age_years <= 22)] <- 1
 
 
 ## ClassSize 
