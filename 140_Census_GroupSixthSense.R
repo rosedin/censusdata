@@ -138,3 +138,10 @@ Census$flag_Importance_conserving_water = importance_function(Census$Importance_
 Census$flag_Importance_saving_energy = importance_function(Census$Importance_saving_energy, option = 1)
 Census$flag_Importance_owning_computer = importance_function(Census$Importance_owning_computer, option = 1)
 Census$flag_Importance_Internet_access = importance_function(Census$Importance_internet_access, option = 1)
+
+
+Census$Armspan_cm = Armspan_cm
+Census$Footlength_cm = Footlength_cm
+Census$Height_cm = Height_cm
+Census$Travel_time_to_school = Travel_time_to_School
+
