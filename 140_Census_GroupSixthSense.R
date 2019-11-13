@@ -70,7 +70,7 @@ Census$flag_score_in_memory_game[which(Census$Score_in_memory_game < 2.02 |Censu
 
 ## Height_cm_cm 
 ### We increased the cutoff of unusual height and armspan to greater than 1
-Height_cm <- Census$Height_cm
+Height_cm <- as.numeric(Census$Height_cm)
 Height_cm[Height_cm==""]<-NA
 Height_cm[Height_cm=="+9000"]<-NA
 Height_cm[Height_cm==".5"]<-NA
@@ -87,7 +87,7 @@ Height_cm[which(Height_cm>235&Height_cm<950)]<-NA
 Height_cm[which(Height_cm>=950&Height_cm<=2350)]<-0.1*(Height_cm[which(Height_cm<=2350&Height_cm>=950)])   #mm-cm
 Height_cm[which(Height_cm>2350)]<-NA
 
-Armspan_cm <- Census$Armspan_cm
+Armspan_cm <- as.numeric(Census$Armspan_cm)
 Armspan_cm[Armspan_cm<1]<-NA
 Armspan_cm[which(Armspan_cm<=2.35)]<-100*(Armspan_cm[which(Armspan_cm<2.35)])   #m-cm
 Armspan_cm[which(Armspan_cm>2.35&Armspan_cm<3.1)]<-NA
@@ -107,7 +107,7 @@ Census$Armspan_cm<-Armspan_cm
 
 ## Footlength_cm
 ### Based on research of footsizes for children between the ages of 8 and 20, we chose 20 centimeters as the minimum cut-off value and 34 centimeter as the maximum cut-off value. We kept the same conversion calculations as the previous group and replaced the cut-off values.
-Footlength_cm<-Census$Footlength_cm
+Footlength_cm<-as.numeric(Census$Footlength_cm)
 Footlength_cm[which(Footlength_cm<0.2)]<-NA 
 Footlength_cm[which(Footlength_cm<=0.34&Footlength_cm>=0.2)]<-100*(Footlength_cm[which(Footlength_cm<=0.34&Footlength_cm>=0.2)])   #m-cm
 Footlength_cm[which(Footlength_cm>0.65&Footlength_cm<=1.1)]<-30.48*(Footlength_cm[which(Footlength_cm>0.65&Footlength_cm<=1.1)])  #foot-cm
