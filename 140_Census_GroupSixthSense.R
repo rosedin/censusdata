@@ -111,7 +111,7 @@ Footlength_cm[which(Footlength_cm>0.65&Footlength_cm<=1.1)]<-30.48*(Footlength_c
 Footlength_cm[which(Footlength_cm>1.31&Footlength_cm<3.5)]<-NA
 Footlength_cm[which(Footlength_cm>=7.9&Footlength_cm<=13.4)]<-2.54*(Footlength_cm[which(Footlength_cm>=7.9&Footlength_cm<=13.4)])  #inch-cm
 Footlength_cm[which(Footlength_cm>34&Footlength_cm<90)]<-NA
-Footlength_cm[which(Footlength_cm>=90&Footlength_cm<=340)]<-0.1*(Footlength_cm[which(Footlength_cm<=400&Footlength_cm>=90)])   #mm-cm
+Footlength_cm[which(Footlength_cm>=90&Footlength_cm<=340)]<-0.1*(Footlength_cm[which(Footlength_cm>=90&Footlength_cm<=340)])   #mm-cm
 Footlength_cm[which(Footlength_cm>340)]<-NA
 
 
