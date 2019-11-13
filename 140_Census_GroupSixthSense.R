@@ -19,7 +19,8 @@ Census$flag_age_years[which(Census$Ageyears >= 20 & Census$Ageyears <= 22)] <- 1
 
 
 ## ClassSize 
-### A class size of more than 60 was flagged. Some states have laws prohibiting large class sizes in schools. After plotting the data a decision was made to make 60 the cut-off value.
+### A class size of more than 60 was flagged. Some states have laws prohibiting large class sizes in schools. After plotting the data a decision was made to make 60 the cut-off value. 
+### We chose to use only "extremely unusual" as a flag in this case since most class sizes fall within a designated range due to school laws and funding. 
 Census$flag_classsize <- 0
 Census$flag_classsize[which(Census$ClassSize >= 60 | Census$ClassSize < 1)] <- 2
 
