@@ -65,7 +65,7 @@ Census$flag_score_in_memory_game <- 0
 Census$flag_score_in_memory_game[which(Census$Score_in_memory_game < 2.02 |Census$Score_in_memory_game > 96)] <- 2
 
 
-## Height_cm_cm 
+## Height_cm and Armspan_cm 
 ### We increased the cutoff of unusual height and armspan to greater than 1
 Height_cm <- as.numeric(Census$Height_cm)
 Height_cm[Height_cm==""]<-NA
