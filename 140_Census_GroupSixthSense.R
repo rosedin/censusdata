@@ -72,7 +72,7 @@ Height_cm[Height_cm==""]<-NA
 Height_cm[Height_cm=="+9000"]<-NA
 Height_cm[Height_cm==".5"]<-NA
 Height_cm[Height_cm==".30"]<-NA
-Height_cm_cm<-as.numeric(Height_cm)
+Height_cm<-as.numeric(Height_cm)
 Height_cm[Height_cm<=1]<-NA
 Height_cm[which(Height_cm<=2.35)]<-100*(Height_cm[which(Height_cm<2.35)])   #m-cm
 Height_cm[which(Height_cm>2.35&Height_cm<3.1)]<-NA
