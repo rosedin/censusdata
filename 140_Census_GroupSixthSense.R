@@ -70,9 +70,9 @@ Census$flag_score_in_memory_game[which(Census$Score_in_memory_game < 2.02 |Censu
 Height_cm <- as.numeric(Census$Height_cm)
 Height_cm[Height_cm==""]<-NA
 Height_cm[Height_cm=="+9000"]<-NA
-Height_cm[Height_cm==".5"]<-NA
-Height_cm[Height_cm==".30"]<-NA
-Height_cm_cm<-as.numeric(Height_cm)
+# Height_cm[Height_cm==".5"]<-NA # Unnecessary code
+# Height_cm[Height_cm==".30"]<-NA # Unnecessary code
+Height_cm<-as.numeric(Height_cm)
 Height_cm[Height_cm<=1]<-NA
 Height_cm[which(Height_cm<=2.35)]<-100*(Height_cm[which(Height_cm<2.35)])   #m-cm
 Height_cm[which(Height_cm>2.35&Height_cm<3.1)]<-NA
